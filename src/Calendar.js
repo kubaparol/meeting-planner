@@ -59,7 +59,7 @@ class Calendar extends React.Component {
                   <p>{email}</p>
                 </header>
                 <p>{date} {time}</p>
-                <button>Delete</button>
+                <button onClick={e => this.deleteMeeting(id)}>Delete</button>
               </li>
             )
           })}
@@ -68,7 +68,7 @@ class Calendar extends React.Component {
     )
   }
 
-  inputChange = e => {
+  inputChange = (e) => {
     const {name, value} = e.target
 
     this.setState({
@@ -76,7 +76,7 @@ class Calendar extends React.Component {
     })
   }
 
-  addNewMeeting = e => {
+  addNewMeeting = (e) => {
     e.preventDefault();
 
     const {
@@ -102,6 +102,12 @@ class Calendar extends React.Component {
       date: '',
       time: '',
       meetings: prevState.meetings.concat(newMeeting),
+    }))
+  }
+
+  deleteMeeting = (meetingId) => {
+    this.setState((prevState) => ({
+      meetings: prevState.meetings.filter((meeting) => meeting.id !== meetingId)
     }))
   }
 }
