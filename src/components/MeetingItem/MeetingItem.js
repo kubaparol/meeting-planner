@@ -22,8 +22,17 @@ const MeetingItem = props => {
   )
 }
 
+export const MeetingsPropsType = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+})
+
 MeetingItem.propTypes = {
-  meeting: PropTypes.object.isRequired,
+  meeting: MeetingsPropsType.isRequired,
   deleteMeeting: PropTypes.func.isRequired,
   className: PropTypes.string,
 }
