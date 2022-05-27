@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { MeetingsPropsType } from '../MeetingItem'
+import TextField from '../TextField'
 
 import classes from './styles.module.css'
 
@@ -18,21 +19,11 @@ const AddMeetingForm = props => {
 
   return (
     <form onSubmit={addNewMeeting} className={`${classes.root}${className ? ` ${className}` : ''}`} {...otherProps}>
-      <label>First name:
-        <input name={"firstName"} value={firstName} onChange={inputChange}/>
-        </label>
-      <label>Last name:
-        <input name={"lastName"} value={lastName} onChange={inputChange}/>
-        </label>
-      <label>E-mail:
-        <input name={"email"} value={email} onChange={inputChange}/>
-        </label>
-      <label>Date:
-        <input name={"date"} value={date} onChange={inputChange}/>
-        </label>
-      <label>Time:
-        <input name={"time"} value={time} onChange={inputChange}/>
-        </label>
+        <TextField text={"First name"} name={"firstName"} value={firstName} onChange={inputChange}/>
+        <TextField text={"Last name"} name={"lastName"} value={lastName} onChange={inputChange}/>
+        <TextField text={"E-mail"} name={"email"} value={email} onChange={inputChange}/>
+        <TextField text={"Date"} name={"date"} value={date} onChange={inputChange}/>
+        <TextField text={"Time"} name={"time"} value={time} onChange={inputChange}/>
         <input type="submit" value="Add"/>
     </form>
   )
