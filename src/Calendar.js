@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MeetingItem from './components/MeetingItem'
+import MeetingsList from './components/MeetingsList'
 
 class Calendar extends React.Component {
   state = {
@@ -52,13 +52,7 @@ class Calendar extends React.Component {
             </label>
             <input type="submit" value="Add"/>
         </form>
-        <ul>
-          {meetings.map(meeting => {
-            return (
-              <MeetingItem meeting={meeting} deleteMeeting={this.deleteMeeting}/>
-            )
-          })}
-        </ul>
+        <MeetingsList meetings={meetings} deleteMeeting={this.deleteMeeting}/>
       </>
     )
   }
