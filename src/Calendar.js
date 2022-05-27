@@ -1,5 +1,6 @@
 import React from 'react'
 
+import AddMeetingForm from './components/AddMeetingForm'
 import MeetingsList from './components/MeetingsList'
 
 class Calendar extends React.Component {
@@ -22,36 +23,12 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const {
-      firstName,
-      lastName,
-      email,
-      date,
-      time,
-      meetings
-    } = this.state
+    const {meetings} = this.state
 
     return (
       <>
         <h1>Meeting planner</h1>
-        <form onSubmit={this.addNewMeeting}>
-          <label>First name:
-            <input name={"firstName"} value={firstName} onChange={this.inputChange}/>
-            </label>
-          <label>Last name:
-            <input name={"lastName"} value={lastName} onChange={this.inputChange}/>
-            </label>
-          <label>E-mail:
-            <input name={"email"} value={email} onChange={this.inputChange}/>
-            </label>
-          <label>Date:
-            <input name={"date"} value={date} onChange={this.inputChange}/>
-            </label>
-          <label>Time:
-            <input name={"time"} value={time} onChange={this.inputChange}/>
-            </label>
-            <input type="submit" value="Add"/>
-        </form>
+        <AddMeetingForm addNewMeeting={this.addNewMeeting} inputChange={this.inputChange} state={this.state}/>
         <MeetingsList meetings={meetings} deleteMeeting={this.deleteMeeting}/>
       </>
     )
