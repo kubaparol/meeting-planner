@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Button from './components/Button'
+
 class Calendar extends React.Component {
   state = {
     firstName: '',
@@ -59,7 +61,7 @@ class Calendar extends React.Component {
                   <p>{email}</p>
                 </header>
                 <p>{date} {time}</p>
-                <button onClick={e => this.deleteMeeting(id)}>Delete</button>
+                <Button onClick={e => this.deleteMeeting(id)}>Delete</Button>
               </li>
             )
           })}
