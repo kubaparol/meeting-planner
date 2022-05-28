@@ -11,7 +11,7 @@ const MeetingItem = props => {
   const {id, firstName, lastName, email, date, time} = meeting
 
   return (
-    <li key={id} className={`${classes.root}${className ? ` ${className}` : ''}`} {...otherProps}>
+    <li className={`${classes.root}${className ? ` ${className}` : ''}`} {...otherProps}>
       <header>
         <h2>{firstName} {lastName}</h2>
         <p>{email}</p>

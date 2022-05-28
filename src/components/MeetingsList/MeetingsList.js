@@ -13,7 +13,9 @@ const MeetingsList = props => {
     <ul className={`${classes.root}${className ? ` ${className}` : ''}`} {...otherProps}>
       {meetings.map(meeting => {
         return (
-          <MeetingItem meeting={meeting} deleteMeeting={deleteMeeting}/>
+          <React.Fragment key={meeting.id}>
+            <MeetingItem meeting={meeting} deleteMeeting={deleteMeeting}/>
+          </React.Fragment>
         )
         })}
     </ul>

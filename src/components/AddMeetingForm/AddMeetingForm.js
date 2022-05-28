@@ -14,7 +14,7 @@ const AddMeetingForm = props => {
     ...otherProps} = props
 
     //Czy przekazywanie całego stanu w taki sposób jest ok? W przypadku gdyby lista spotkań była rozbudowana będzie to mieć
-    // wpływ na wydajność bądź nie powinienem się tym przejmować? :D
+    // wpływ na wydajność czy nie powinienem się tym przejmować? :D
     const {firstName, lastName, email, date, time} = state
 
   return (

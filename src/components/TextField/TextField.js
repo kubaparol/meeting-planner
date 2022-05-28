@@ -10,9 +10,9 @@ const TextField = props => {
   return (
     <label>{text}:
       <input className={`${classes.root}${className ? ` ${className}` : ''}`} {...otherProps}
-      name={name} 
-      value={value} 
-        onChange={onChange}/>
+      name={name}
+      value={value}
+      onChange={onChange}/>
     </label>
   )
 }
