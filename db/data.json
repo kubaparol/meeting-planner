@@ -4,9 +4,25 @@
       "firstName": "Jan",
       "lastName": "Kowalski",
       "email": "jan@kowalski.not",
-      "date": "2022-01-01",
+      "date": "2022-06-12",
       "time": "10:00",
       "id": 1
+    },
+    {
+      "firstName": "Tomek",
+      "lastName": "Michalik",
+      "email": "tomek@michalik.not",
+      "date": "2022-07-22",
+      "time": "11:00",
+      "id": 2
+    },
+    {
+      "firstName": "Krzysztof",
+      "lastName": "Nowak",
+      "email": "krzysztof@nowak.not",
+      "date": "2022-07-29",
+      "time": "12:30",
+      "id": 3
     }
   ]
 }
