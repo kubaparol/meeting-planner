@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser, faEnvelope, faCalendar, faClock } from '@fortawesome/free-solid-svg-icons'
+
 import Button from './../Button'
 
 import classes from './styles.module.css'
@@ -13,11 +16,14 @@ const MeetingItem = props => {
   return (
     <li className={`${classes.root}${className ? ` ${className}` : ''}`} {...otherProps}>
       <header>
-        <h2>{firstName} {lastName}</h2>
-        <p>{email}</p>
+        <h2 className={classes.name}><span><FontAwesomeIcon icon={faUser}/></span>{' '}{firstName} {lastName}</h2>
+        <p className={classes.email}><span><FontAwesomeIcon icon={faEnvelope}/></span>{' '}{email}</p>
       </header>
-      <p>{date} {time}</p>
-      <Button onClick={e => deleteMeeting(id)}>Delete</Button>
+      <p className={classes.date}><span><FontAwesomeIcon icon={faCalendar}/></span>{' '}{date}</p>
+      <p className={classes.time}><span><FontAwesomeIcon icon={faClock}/></span>{' '}{time}</p>
+      <div className={classes.buttonContainer}>
+        <Button onClick={e => deleteMeeting(id)} className={classes.button}>Delete</Button>
+      </div>
     </li>
   )
 }

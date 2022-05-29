@@ -1,1 +1,29 @@
-.root {}
+.root {
+  list-style: none;
+  border: 1px solid green;
+  margin: 12px 0;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.name, .email, .date, .time {
+  margin: 10px;
+}
+
+.buttonContainer {
+  text-align: right;
+}
+
+.button {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.name {
+  font-size: 26px;
+}
+
+.email, .date, .time {
+  font-size: 20px;
+}
