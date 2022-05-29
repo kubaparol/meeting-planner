@@ -29,19 +29,29 @@ class Calendar extends React.Component {
   
   render() {
     const {hasError, isLoading, meetings} = this.state
+
+    // Pytanko: Komponent Message ostylowałem w pliku styles.module.css dla walidacji,
+    // a tutaj te style już nie pasują. Tak jakby komponent stracił swoją funkcjonalność.
+    // Sposób poniżej jest ok czy można coś tutaj coś więcej zrobić żeby nie tworzyć nowego komponentu?
+    // Chyba, że CSS module tak działa czy ja po prostu źle to zrozumiałem i robię nie tak? :D
+
+    const fetchResultStyles = {
+      color: 'white',
+      fontSize: '23px',
+    }
     
     return (
       <>
         <h1 className="title">Meeting planner</h1>
         <AddMeetingForm addNewMeeting={this.addNewMeeting} inputChange={this.inputChange} state={this.state} displayError={this.displayError}/>
         {hasError ?
-        <Message>Error!</Message>
+        <Message style={fetchResultStyles}>Error!</Message>
         : isLoading ?
-        <Message>Loading...</Message>
+        <Message style={fetchResultStyles}>Loading...</Message>
         : !meetings ?
-        <Message>No data!</Message>
+        <Message style={fetchResultStyles}>No data!</Message>
         : meetings.length === 0 ?
-        <Message>No scheduled meetings!</Message>
+        <Message style={fetchResultStyles}>No scheduled meetings!</Message>
         :
         <MeetingsList meetings={meetings} deleteMeeting={this.deleteMeeting} text={'Scheduled:'}/>
         }
