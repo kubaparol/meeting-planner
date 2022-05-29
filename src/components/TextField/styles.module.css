@@ -1,1 +1,16 @@
-.root {}
+.root {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  padding: 10px;
+  transition: 0.1s;
+}
+
+.root:focus {
+  border-bottom: 3px solid black;
+  background-color: rgb(243, 236, 236);
+}

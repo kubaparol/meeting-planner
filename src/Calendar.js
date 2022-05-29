@@ -1,8 +1,11 @@
 import React from 'react'
 
+import './Calendar.css'
+
 import AddMeetingForm from './components/AddMeetingForm'
 import MeetingsList from './components/MeetingsList'
 import CalendarAPI from './api'
+import Message from './components/Message'
 
 class Calendar extends React.Component {
   api = new CalendarAPI()
@@ -29,16 +32,16 @@ class Calendar extends React.Component {
     
     return (
       <>
-        <h1>Meeting planner</h1>
+        <h1 className="title">Meeting planner</h1>
         <AddMeetingForm addNewMeeting={this.addNewMeeting} inputChange={this.inputChange} state={this.state} displayError={this.displayError}/>
         {hasError ?
-        <h2>Error!</h2>
+        <Message>Error!</Message>
         : isLoading ?
-        <h2>Loading...</h2>
+        <Message>Loading...</Message>
         : !meetings ?
-        <h2>No data!</h2>
+        <Message>No data!</Message>
         : meetings.length === 0 ?
-        <h2>Meetings are empty!</h2>
+        <Message>No scheduled meetings!</Message>
         :
         <MeetingsList meetings={meetings} deleteMeeting={this.deleteMeeting}/>
         }

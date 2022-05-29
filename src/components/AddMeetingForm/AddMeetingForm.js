@@ -41,7 +41,7 @@ const AddMeetingForm = props => {
         <Message>{dateErrorMessage}</Message>
         <TextField text={"Time"} type="time" name={"time"} value={time} onChange={inputChange}/>
         <Message>{timeErrorMessage}</Message>
-        <input type="submit" value="Add"/>
+        <input type="submit" value="Add" className={classes.submit}/>
     </form>
   )
 }
