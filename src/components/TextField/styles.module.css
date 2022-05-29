@@ -4,7 +4,7 @@
   height: 30px;
   font-size: 18px;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   outline: none;
   padding: 10px;
   transition: 0.15s;
@@ -13,6 +13,6 @@
 }
 
 .root:focus {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid white;
   background-color: transparent;
 }

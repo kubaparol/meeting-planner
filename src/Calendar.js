@@ -43,7 +43,7 @@ class Calendar extends React.Component {
         : meetings.length === 0 ?
         <Message>No scheduled meetings!</Message>
         :
-        <MeetingsList meetings={meetings} deleteMeeting={this.deleteMeeting}/>
+        <MeetingsList meetings={meetings} deleteMeeting={this.deleteMeeting} text={'Scheduled:'}/>
         }
       </>
     )
@@ -140,23 +140,23 @@ class Calendar extends React.Component {
     const timeReg = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
 
     if(!firstName || firstName.length < 2) {
-      this.displayError('firstNameErrorMessage', 'First name must be min. 2 characters long!')
+      this.displayError('firstNameErrorMessage', 'First name must be min. 2 characters long')
     } else this.displayError('firstNameErrorMessage', '')
 
     if(!lastName || lastName.length < 2) {
-      this.displayError('lastNameErrorMessage', 'Last name must be min. 2 characters long!')
+      this.displayError('lastNameErrorMessage', 'Last name must be min. 2 characters long')
     } else this.displayError('lastNameErrorMessage', '')
 
     if(!email || emailReg.test(email) === false) {
-      this.displayError('emailErrorMessage', 'Enter correct email!')
+      this.displayError('emailErrorMessage', 'Incorrect email')
     } else this.displayError('emailErrorMessage', '')
 
     if(!date || dateReg.test(date) === false) {
-      this.displayError('dateErrorMessage', 'Enter correct date, i.e. yyyy-mm-dd!')
+      this.displayError('dateErrorMessage', 'Incorrect date (yyyy-mm-dd)')
     } else this.displayError('dateErrorMessage', '')
 
     if(!time || timeReg.test(time) === false) {
-      this.displayError('timeErrorMessage', 'Enter correct time, i.e. hh:mm!')
+      this.displayError('timeErrorMessage', 'Incorrect time (hh:mm)')
     } else this.displayError('timeErrorMessage', '')
   }
 

@@ -7,10 +7,11 @@ import MeetingItem, {MeetingsPropsType} from '../MeetingItem'
 import classes from './styles.module.css'
 
 const MeetingsList = props => {
-  const {meetings, deleteMeeting, className, ...otherProps} = props
+  const {meetings, text, deleteMeeting, className, ...otherProps} = props
 
   return (
     <ul className={`${classes.root}${className ? ` ${className}` : ''}`} {...otherProps}>
+      <p className={classes.text}>{text}</p>
       {meetings.map(meeting => {
         return (
           <React.Fragment key={meeting.id}>
