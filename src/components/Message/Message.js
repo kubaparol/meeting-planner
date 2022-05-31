@@ -5,10 +5,10 @@ import PropTypes from 'prop-types'
 import classes from './styles.module.css'
 
 const Message = props => {
-  const {children, className, ...otherProps} = props
+  const {children, className, type, ...otherProps} = props
 
   return (
-    <span className={`${classes.root}${className ? ` ${className}` : ''}`} {...otherProps}>
+    <span className={`${classes.root} ${type === 'error' ? classes.error : type === 'fetchInfo' ? classes.fetchInfo : ''}${className ? ` ${className}` : ''}`} {...otherProps}>
       {children}
     </span>
   )

@@ -1,6 +1,12 @@
-.root {
+.error {
   margin-bottom: 15px;
   font-size: 17px;
   color: #f86060;
   text-align: right;
+}
+
+.fetchInfo {
+  color: yellow;
+  font-size: 25px;
+  margin-left: 20px;
 }
