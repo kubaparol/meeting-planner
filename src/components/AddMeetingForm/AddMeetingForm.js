@@ -1,7 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import { MeetingsPropsType } from '../MeetingItem'
 import TextField from '../TextField'
 import Message from '../Message'
 import CalendarAPI from '../../api/CalendarAPI'

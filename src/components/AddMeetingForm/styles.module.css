@@ -1,7 +1,5 @@
 .root {
-  /* background-color: #8158DC; */
   color: white;
-  /* box-shadow: 0 0 8px 1px grey; */
   display: flex;
   flex-direction: column;
   font-size: 19px;
@@ -21,4 +19,11 @@
   cursor: pointer;
   font-weight: 600;
   color: white;
+}
+
+@media (min-width: 1000px) {
+  .root {
+    width: 30%;
+    position: fixed;
+  }
 }

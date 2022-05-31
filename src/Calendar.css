@@ -12,3 +12,11 @@ body {
   font-weight: 400;
   text-align: center;
 }
+
+@media (min-width: 1000px) {
+  .calendar {
+    display: flex;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+}

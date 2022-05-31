@@ -20,8 +20,10 @@ class Calendar extends React.Component {
     return (
       <>
         <h1 className="title">Meeting planner</h1>
-        <AddMeetingForm getMeeting={this.getMeeting}/>
-        {this.renderMeetingsLists()}
+        <section className='calendar'>
+          <AddMeetingForm getMeeting={this.getMeeting}/>
+          {this.renderMeetingsLists()}
+        </section>
       </>
     )
   }
