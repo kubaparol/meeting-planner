@@ -7,35 +7,36 @@ import CalendarAPI from '../../api/CalendarAPI'
 import classes from './styles.module.css'
 
 class AddMeetingForm extends React.Component {
-state = {
-  id: null,
-  firstName: '',
-  lastName: '',
-  email: '',
-  date: '',
-  time: '',
-  firstNameErrorMessage: '',
-  lastNameErrorMessage: '',
-  emailErrorMessage: '',
-  dateErrorMessage: '',
-  timeErrorMessage: ''
-}
+  api = new CalendarAPI()
+  state = {
+    id: null,
+    firstName: '',
+    lastName: '',
+    email: '',
+    date: '',
+    time: '',
+    firstNameErrorMessage: '',
+    lastNameErrorMessage: '',
+    emailErrorMessage: '',
+    dateErrorMessage: '',
+    timeErrorMessage: ''
+  }
 
 
-render() {
-  const {className} = this.props
-  const {firstName, 
-    lastName, 
-    email, 
-    date, 
-    time, 
-    firstNameErrorMessage, 
-    lastNameErrorMessage, 
-    emailErrorMessage, 
-    dateErrorMessage, 
-    timeErrorMessage} = this.state
+  render() {
+    const {className} = this.props
+    const {firstName, 
+      lastName, 
+      email, 
+      date, 
+      time, 
+      firstNameErrorMessage, 
+      lastNameErrorMessage, 
+      emailErrorMessage, 
+      dateErrorMessage, 
+      timeErrorMessage} = this.state
 
-  return (
+    return (
       <form onSubmit={this.addNewMeeting} className={`${classes.root}${className ? ` ${className}` : ''}`}>
           <TextField text={"First name"} name={"firstName"} value={firstName} onChange={this.inputChange}/>
           <Message type='error'>{firstNameErrorMessage}</Message>
@@ -69,8 +70,7 @@ render() {
         time: time
       }
 
-      const api = new CalendarAPI()
-      const data = await api.addNewMeetingToAPI(newMeeting)
+      const data = await this.api.addNewMeetingToAPI(newMeeting)
       const newMeetingWithId = {...newMeeting, id: data.id}
 
       this.setState(() => ({
@@ -103,29 +103,56 @@ render() {
       time,
     } = this.state
 
-    const emailReg = /(?:^|\s)[\w!#$%&'*+/=?^`{|}~-](\.?[\w!#$%&'*+/=?^`{|}~-]+)*@\w+[.-]?\w*\.[a-zA-Z]{2,3}\b/
-    const dateReg = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/
-    const timeReg = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
+    const regRules = [
+      {name: 'email', reg: /(?:^|\s)[\w!#$%&'*+/=?^`{|}~-](\.?[\w!#$%&'*+/=?^`{|}~-]+)*@\w+[.-]?\w*\.[a-zA-Z]{2,3}\b/, message: 'Incorrect email'},
+      {name: 'date', reg: /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/, message: 'Incorrect date (yyyy-mm-dd)'},
+      {name: 'time', reg: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/, message: 'Incorrect time (hh:mm)'},
+    ]
+    
+    const rules = [
+      {name: 'firstName', minLength: 2, message: 'First name must be min. 2 characters long'},
+      {name: 'lastName', minLength: 2, message: 'Last name must be min. 2 characters long'}
+    ]
 
-    if(!firstName || firstName.length < 2) {
-      this.displayError('firstNameErrorMessage', 'First name must be min. 2 characters long')
-    } else this.displayError('firstNameErrorMessage', '')
+    regRules.forEach(item => {
+      const value = this.state[item.name]
 
-    if(!lastName || lastName.length < 2) {
-      this.displayError('lastNameErrorMessage', 'Last name must be min. 2 characters long')
-    } else this.displayError('lastNameErrorMessage', '')
+      if(item.reg.test(value) === false) {
+        this.displayError(`${item.name}ErrorMessage`, item.message)
+      } else this.displayError(`${item.name}ErrorMessage`, '')
+    })
 
-    if(!email || emailReg.test(email) === false) {
-      this.displayError('emailErrorMessage', 'Incorrect email')
-    } else this.displayError('emailErrorMessage', '')
+    rules.forEach(item => {
+      const value = this.state[item.name]
 
-    if(!date || dateReg.test(date) === false) {
-      this.displayError('dateErrorMessage', 'Incorrect date (yyyy-mm-dd)')
-    } else this.displayError('dateErrorMessage', '')
+      if(value.length < item.minLength) {
+        this.displayError(`${item.name}ErrorMessage`, item.message) 
+      } else this.displayError(`${item.name}ErrorMessage`, '')
+    })
 
-    if(!time || timeReg.test(time) === false) {
-      this.displayError('timeErrorMessage', 'Incorrect time (hh:mm)')
-    } else this.displayError('timeErrorMessage', '')
+    // const emailReg = /(?:^|\s)[\w!#$%&'*+/=?^`{|}~-](\.?[\w!#$%&'*+/=?^`{|}~-]+)*@\w+[.-]?\w*\.[a-zA-Z]{2,3}\b/
+    // const dateReg = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/
+    // const timeReg = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
+
+    // if(!firstName || firstName.length < 2) {
+    //   this.displayError('firstNameErrorMessage', 'First name must be min. 2 characters long')
+    // } else this.displayError('firstNameErrorMessage', '')
+
+    // if(!lastName || lastName.length < 2) {
+    //   this.displayError('lastNameErrorMessage', 'Last name must be min. 2 characters long')
+    // } else this.displayError('lastNameErrorMessage', '')
+
+    // if(!email || emailReg.test(email) === false) {
+    //   this.displayError('emailErrorMessage', 'Incorrect email')
+    // } else this.displayError('emailErrorMessage', '')
+
+    // if(!date || dateReg.test(date) === false) {
+    //   this.displayError('dateErrorMessage', 'Incorrect date (yyyy-mm-dd)')
+    // } else this.displayError('dateErrorMessage', '')
+
+    // if(!time || timeReg.test(time) === false) {
+    //   this.displayError('timeErrorMessage', 'Incorrect time (hh:mm)')
+    // } else this.displayError('timeErrorMessage', '')
   }
 
   displayError(name, message) {
