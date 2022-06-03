@@ -1,6 +1,6 @@
 class CalendarAPI {
   constructor() {
-    this.url = 'http://localhost:3005/meetings';
+    this.url = 'https://fake-database-server.herokuapp.com/meetings';
   }
 
   async loadMeetingsFromAPI() {
