@@ -6,7 +6,7 @@
 
 ## :mag: Overview
 
-:fire: Click to see live version: [Meeting Planner App]()!
+:fire: Click to see live version: [Meeting Planner App](https://kubaparol.github.io/meeting-planner/)!
 
 Meeting Planner App is something like a handy calendar. This app is built in React and uses a local API (JSON server) as a database to manage meetings (with [fake-server](https://github.com/kubaparol/fake-json-server-heroku).)
 
