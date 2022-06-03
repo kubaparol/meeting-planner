@@ -95,13 +95,6 @@ class AddMeetingForm extends React.Component {
   }
 
   formValidation() {
-    const {
-      firstName,
-      lastName,
-      email,
-      date,
-      time,
-    } = this.state
 
     const regRules = [
       {name: 'email', reg: /(?:^|\s)[\w!#$%&'*+/=?^`{|}~-](\.?[\w!#$%&'*+/=?^`{|}~-]+)*@\w+[.-]?\w*\.[a-zA-Z]{2,3}\b/, message: 'Incorrect email'},
@@ -130,29 +123,6 @@ class AddMeetingForm extends React.Component {
       } else this.displayError(`${item.name}ErrorMessage`, '')
     })
 
-    // const emailReg = /(?:^|\s)[\w!#$%&'*+/=?^`{|}~-](\.?[\w!#$%&'*+/=?^`{|}~-]+)*@\w+[.-]?\w*\.[a-zA-Z]{2,3}\b/
-    // const dateReg = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/
-    // const timeReg = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
-
-    // if(!firstName || firstName.length < 2) {
-    //   this.displayError('firstNameErrorMessage', 'First name must be min. 2 characters long')
-    // } else this.displayError('firstNameErrorMessage', '')
-
-    // if(!lastName || lastName.length < 2) {
-    //   this.displayError('lastNameErrorMessage', 'Last name must be min. 2 characters long')
-    // } else this.displayError('lastNameErrorMessage', '')
-
-    // if(!email || emailReg.test(email) === false) {
-    //   this.displayError('emailErrorMessage', 'Incorrect email')
-    // } else this.displayError('emailErrorMessage', '')
-
-    // if(!date || dateReg.test(date) === false) {
-    //   this.displayError('dateErrorMessage', 'Incorrect date (yyyy-mm-dd)')
-    // } else this.displayError('dateErrorMessage', '')
-
-    // if(!time || timeReg.test(time) === false) {
-    //   this.displayError('timeErrorMessage', 'Incorrect time (hh:mm)')
-    // } else this.displayError('timeErrorMessage', '')
   }
 
   displayError(name, message) {

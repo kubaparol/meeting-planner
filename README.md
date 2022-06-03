@@ -1,30 +1,64 @@
-# React Calendar
+# Meeting Planner App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![screen app](./assets/screen-app.png)
 
-## Available Scripts
+&nbsp;
 
-In the project directory, you can run:
+## :mag: Overview
 
-### `npm start`
+:fire: Click to see live version: [Meeting Planner App]()!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Meeting Planner App is something like a handy calendar. This app is built in React and uses a local API (JSON server) as a database to manage meetings (with [fake-server](https://github.com/kubaparol/fake-json-server-heroku).)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can add meetings with validated form and delete selected meetings (using local API).
 
-### `npm test`
+&nbsp;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## :bulb: Technologies
 
-### `npm run build`
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+&nbsp;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## :cd: Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### You can run the project locally 
+
+- First you need to clone the project
+
+``` 
+git clone
+```
+
+- Then install all necessary packages
+
+```
+npm i
+```
+- Start developers mode
+
+```
+npm start
+```
+
+- App is ready to go:
+
+  -  site
+  ```
+  http://localhost:3000/
+  ```
+  - database
+  
+  ```
+  
+  ```
+
+
+&nbsp;
+
+## :clap: Special thanks
+
+Special thanks to my [Mentor - devmentor.pl](https://devmentor.pl/) - for providing me with this task and for code review.
