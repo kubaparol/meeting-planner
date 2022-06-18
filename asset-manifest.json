@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/meeting-planner/static/css/main.407d90e6.css",
-    "main.js": "/meeting-planner/static/js/main.a75da332.js",
+    "main.css": "/meeting-planner/static/css/main.076ef137.css",
+    "main.js": "/meeting-planner/static/js/main.cd05bea2.js",
     "static/js/787.6d3784d6.chunk.js": "/meeting-planner/static/js/787.6d3784d6.chunk.js",
     "index.html": "/meeting-planner/index.html",
-    "main.407d90e6.css.map": "/meeting-planner/static/css/main.407d90e6.css.map",
-    "main.a75da332.js.map": "/meeting-planner/static/js/main.a75da332.js.map",
+    "main.076ef137.css.map": "/meeting-planner/static/css/main.076ef137.css.map",
+    "main.cd05bea2.js.map": "/meeting-planner/static/js/main.cd05bea2.js.map",
     "787.6d3784d6.chunk.js.map": "/meeting-planner/static/js/787.6d3784d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.407d90e6.css",
-    "static/js/main.a75da332.js"
+    "static/css/main.076ef137.css",
+    "static/js/main.cd05bea2.js"
   ]
 }
