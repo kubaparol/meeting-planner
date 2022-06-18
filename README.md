@@ -4,6 +4,16 @@
 
 &nbsp;
 
+### Contents:
+
+- [Overview](#mag-overview)
+- [Technologies](#bulb-technologies)
+- [Installation](#cd-installation)
+- [Contact](#wave-feel-free-to-contact-me)
+- [Special thanks](#clap-special-thanks)
+
+&nbsp;
+
 ## :mag: Overview
 
 :fire: Click to see live version: [Meeting Planner App](https://kubaparol.github.io/meeting-planner/)!
@@ -56,6 +66,14 @@ npm start
   https://fake-database-server.herokuapp.com/meetings
   ```
 
+  &nbsp;
+
+## :wave: Feel free to contact me
+
+You can find me here:
+
+- [LinkedIn](https://www.linkedin.com/in/jakub-parol/)
+- [GitHub](https://github.com/kubaparol)
 
 &nbsp;
 

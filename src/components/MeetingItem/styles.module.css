@@ -29,3 +29,11 @@
 .email, .date, .time {
   font-size: 20px;
 }
+
+.icon {
+  transition: 0.1s;
+}
+
+.icon:hover {
+  color: rgb(134, 134, 134)
+}

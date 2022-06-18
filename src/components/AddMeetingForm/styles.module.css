@@ -19,11 +19,15 @@
   cursor: pointer;
   font-weight: 600;
   color: white;
+  transition: 0.2s;
 }
 
 @media (min-width: 1000px) {
   .root {
     width: 30%;
     position: fixed;
+  }
+  .submit:hover {
+    background-color: #39f085
   }
 }
